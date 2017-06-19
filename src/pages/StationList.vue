@@ -4,7 +4,12 @@
 
 <script>
   export default {
-    name: 'StationList'
+    name: 'StationList',
+    created () {
+      this.$http.get('/DataAPI/Commom.ashx').then(res => {
+        console.log(res.data)
+      }).catch(err => console.log(err))
+    }
   }
 </script>
 
