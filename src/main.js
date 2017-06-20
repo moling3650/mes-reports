@@ -2,13 +2,16 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Axios from 'axios'
+import ElementUI from 'element-ui'
 import App from './App'
 import router from './router'
 
 import 'reset.css'
+import 'element-ui/lib/theme-default/index.css'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios
+Vue.use(ElementUI)
 
 import { initMock } from './api/mock'
 initMock()
