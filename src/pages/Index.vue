@@ -4,6 +4,10 @@
       <span style="line-height: 36px;">工站列表看板</span>
       <el-button style="float: right;" icon="view" @click="$router.push('/stationlist')">查看</el-button>
     </el-card>
+    <el-card class="box-card">
+      <span style="line-height: 36px;">工序看板</span>
+      <el-button style="float: right;" icon="view" @click="$router.push('/processreport')">查看</el-button>
+    </el-card>
   </div>
 </template>
 

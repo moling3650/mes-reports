@@ -1,6 +1,7 @@
 import Mock from 'mockjs'
 
-import stationList from './mock.stationlist.js'
+import stationList from './stationList.mock.js'
+import processReport from './processReport.mock.js'
 
 function addToMock (list) {
   list.map(item => Mock.mock(item.rurl, item.data))
@@ -13,4 +14,5 @@ export const initMock = () => {
     { WorkShopId: 66, WorkShopCode: '003', WorkShopName: '化成车间' }
   ])
   addToMock(stationList)
+  addToMock(processReport)
 }
