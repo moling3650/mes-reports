@@ -1,7 +1,7 @@
 <template>
   <div class="process-report">
     <common-header></common-header>
-    <router-view></router-view>
+    <router-view :process="process"></router-view>
   </div>
 </template>
 
@@ -19,10 +19,15 @@
         index: 0
       }
     },
+    computed: {
+      process () {
+        return this.processList.length > 0 ? this.processList[0] : {}
+      }
+    },
     methods: {
       fetchProcessList () {
         this.$http.get('/processInOutNg.ashx?ActType=GetProcessCode').then(res => {
-          this.processList = res.data.processList
+          this.processList = res.data.ProcessList
         }).catch(err => console.log(err))
       }
     },

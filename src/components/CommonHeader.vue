@@ -5,6 +5,7 @@
       <el-submenu :style="{float: 'right'}" index="/reports">
         <template slot="title"><i class="el-icon-document"></i>看板</template>
         <el-menu-item index="/stationlist">工站列表</el-menu-item>
+        <el-menu-item index="/processreport/">工序监控</el-menu-item>
       </el-submenu>
     </div>
   </el-menu>

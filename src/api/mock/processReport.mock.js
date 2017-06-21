@@ -24,10 +24,10 @@ export default [
             'OrderN0': 'TYU-01-01',
             'P_name': match[1] === 'ZJTBAM' ? '正极涂布单面' : '负极涂布单面',
             'Class_code': '白班',
-            'Qty': 0.0,
-            'Fqty': 0.000,
+            'Qty|1000-10000': 1,
+            'Fqty|1-100': 1,
             'Frate': 0.000000,
-            'Initqty|1000-100000': 1
+            'Initqty|10000-100000': 1
           }
         ]
       })
