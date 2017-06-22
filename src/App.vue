@@ -13,7 +13,7 @@
 <style>
   .container {
     position: relative;
-    max-width: 998px;
+    max-width: 992px;
     width: 100%;
     margin: 0 auto;
   }

@@ -1,7 +1,12 @@
 <template>
   <div class="process-report">
     <common-header></common-header>
-    <router-view :process="process"></router-view>
+    <template v-if="process.process_code">
+      <h2 class="process-name" ref="title" v-text="process.process_name"></h2>
+      <keep-alive>
+        <router-view :processCode="process.process_code"></router-view>
+      </keep-alive>
+    </template>
   </div>
 </template>
 
@@ -38,4 +43,9 @@
 </script>
 
 <style lang="css" scoped>
+  .process-name {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    text-align: center;
+  }
 </style>

@@ -32,5 +32,19 @@ export default [
         ]
       })
     }
+  },
+  {
+    rurl: /processInOutNg\.ashx\?ActType=GetOrderPlan&process_code=(Z|F)JTBAM/,
+    data: function (options) {
+      return Mock.mock({
+        'orderplan|3-5': [
+          {
+            'orderno': /1V[A-Z](\d{2}[A-Z]{2}){2}(-0[12]){1,3}/,
+            'initqty|5000-50000': 1,
+            'planqty|50000-100000': 1
+          }
+        ]
+      })
+    }
   }
 ]

@@ -1,6 +1,5 @@
 <template>
   <div class="processs-table container">
-    <h2 class="process-name">{{process.process_name}}</h2>
     <el-table :data="tableData" stripe border style="width: 100%">
       <el-table-column label="日期" width="150">
         <template scope="scope">
@@ -31,8 +30,8 @@
   export default {
     name: 'processTable',
     props: {
-      process: {
-        type: Object
+      processCode: {
+        type: String
       }
     },
     data () {
@@ -41,28 +40,23 @@
       }
     },
     watch: {
-      process: 'fetchInOutNgList'
+      processCode: 'fetchInOutNgList'
     },
     methods: {
       fetchInOutNgList () {
-        if (!this.process.process_code) {
+        if (!this.processCode) {
           return
         }
-        this.$http.get(`/processInOutNg.ashx?process_code=${this.process.process_code}`).then(res => {
+        this.$http.get(`/processInOutNg.ashx?process_code=${this.processCode}`).then(res => {
           this.tableData = res.data.InOutNgList
         }).catch(err => console.log(err))
       }
     },
-    mounted () {
+    activated () {
       this.fetchInOutNgList()
     }
   }
 </script>
 
 <style lang="css" scoped>
-  .process-name {
-    margin: 10px 0;
-    font-size: 1.5rem;
-    text-align: center;
-  }
 </style>
