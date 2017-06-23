@@ -1,31 +1,25 @@
 <template>
   <div class="index container">
-    <el-card class="box-card">
-      <span style="line-height: 36px;">工站列表</span>
-      <el-button :style="btnStyle" icon="view" @click="$router.push('/stationlist')">查看</el-button>
-    </el-card>
-    <el-card class="box-card">
-      <span style="line-height: 36px;">工序详细</span>
-      <el-button :style="btnStyle" icon="view" @click="$router.push('/Processreport/')">查看</el-button>
-    </el-card>
-    <el-card class="box-card">
-      <span style="line-height: 36px;">工序订单</span>
-      <el-button :style="btnStyle" icon="view" @click="$router.push('/Processreport/order')">查看</el-button>
-    </el-card>
+    <el-button class="btn" icon="view" @click="$router.push('/stationlist')">工站列表</el-button>
+    <el-button class="btn" icon="view" @click="$router.push('/Processreport/')">工序详细</el-button>
+    <el-button class="btn" icon="view" @click="$router.push('/Processreport/order')">工序订单</el-button>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Index',
-    created () {
-      this.btnStyle = { float: 'right' }
-    }
+    name: 'Index'
   }
 </script>
 
 <style lang="css" scoped>
-  .box-card {
-    margin: 10px 0;
+  .index {
+    margin-top: 20px;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    margin: 10px;
   }
 </style>
