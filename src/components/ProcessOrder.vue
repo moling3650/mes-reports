@@ -19,11 +19,15 @@
         chart: null
       }
     },
+    computed: {
+      isMobile () {
+        return window.innerWidth < 992
+      }
+    },
     methods: {
       _setChartContainerHeigh () {
         let height = window.innerHeight - this.$refs.chart.getBoundingClientRect().top + 'px'
         this.$refs.chart.style.height = height
-        console.log('ok')
       },
       _getInitSettings () {
         return {
@@ -152,7 +156,7 @@
         this.$nextTick(_ => {
           this._setChartContainerHeigh()
           this.chart = echarts.init(this.$refs.chart)
-          let opts = window.innerWidth < 992 ? this._getInitMobileSettings() : this._getInitSettings()
+          let opts = this.isMobile ? this._getInitMobileSettings() : this._getInitSettings()
           this.chart.setOption(opts)
         })
       }
